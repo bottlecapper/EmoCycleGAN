@@ -124,7 +124,7 @@ $ python train.py --train_A_dir /media/jg/H/data/VCC2016/vcc2016_training/SF1 --
 
 
 <p align="center">
-    <img src = "./train_log/tensorboard20181008.png" width="100%">
+    <img src = "./tensorboard/20181012.png" width="100%">
 </p>
 
 We can listen to the converted audio in folder ``validation_output``, and compare with the original files in ``validation_A_dir`` and ``validation_B_dir``. 
