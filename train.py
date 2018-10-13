@@ -118,6 +118,10 @@ def train(train_A_dir, train_B_dir, model_dir, model_name, random_seed, validati
 
         print('Time Elapsed for This Epoch: %02d:%02d:%02d' % (time_elapsed_epoch // 3600, (time_elapsed_epoch % 3600 // 60), (time_elapsed_epoch % 60 // 1)))
 
+        if generator_learning_rate <= 0:
+            print('training end')
+            break
+
         if validation_A_dir is not None:
             if epoch % 50 == 0:
                 print('Generating Validation Data B from A...')
@@ -162,13 +166,13 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description = 'Train CycleGAN model for datasets.')
 
-    train_A_dir_default = './data/vcc2016_training/SF1'
-    train_B_dir_default = './data/vcc2016_training/TF2'
-    model_dir_default = './model/sf1_tf2'
-    model_name_default = 'sf1_tf2.ckpt'
+    train_A_dir_default = './../../../Database/Emotion/hap_neu/hap'
+    train_B_dir_default = './../../../Database/Emotion/hap_neu/neu'
+    model_dir_default = './model/hap_neu'
+    model_name_default = 'hap_neu.ckpt'
     random_seed_default = 0
-    validation_A_dir_default = './data/evaluation_all/SF1'
-    validation_B_dir_default = './data/evaluation_all/TF2'
+    validation_A_dir_default = './../../../Database/Emotion/hap_neu/val_hap'
+    validation_B_dir_default = './../../../Database/Emotion/hap_neu/val_neu'
     output_dir_default = './validation_output'
     tensorboard_log_dir_default = './log'
 
