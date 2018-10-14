@@ -9,8 +9,6 @@ This is a tensorflow implementation of my paper Nonparallel Emotional Speech Con
 2. Mel-cepstral coefficients (MCEPs), a representation of spectral envelope, trained by CycleGAN
 3. Aperiodicities (APs), directly used without modification
 
-CycleGAN is a generative model developed for unpaired image-to-image translation. It assumes the existence of a cycle-consistency mapping that an image in the source domain mapped to a target domain and mapped back will be exactly the same as the original image. 
-
 ### Assumption and Loss
 To fulfill the goal (change emotion, keep linguistic content & speaker identity), we consider the following loss functions:
 1. Adversarial loss         (naturalness)
@@ -19,6 +17,7 @@ To fulfill the goal (change emotion, keep linguistic content & speaker identity)
 4. Classification loss      (emotion correctness)
 
 ### Neural Network Representation
+CycleGAN is a generative model developed for unpaired image-to-image translation. It assumes the existence of a cycle-consistency mapping that an image in the source domain mapped to a target domain and mapped back will be exactly the same as the original image. <br />
 When applied for voice conversion, gated linear units (GLUs) are used as activation function to capture the sequential and hierarchical structures of speech.  It allows the information to be selectively propagated based on the previous layer states. The generator is 1D CNN focusing on temporal structure, and the discriminator is 2D CNN focusing on spectral texture. The model consists of the following architecture
 
 <p align="left">
