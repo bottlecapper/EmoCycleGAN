@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a tensorflow implementation of my paper Nonparallel Emotional Speech Conversion. It is an end-to-end voice conversion system which can change the speaker's emotion. For example, neutral to angry, sad to happy. The model aims at generating speech with desired emotions while keeping the original liguistic content and speaker identity. It first extracts acoustic features from raw audio, and then learn the mapping from source emotion to target emotion in the feature space. In our approach, three types of features are considered: 
+This is a tensorflow implementation of my paper Nonparallel Emotional Speech Conversion. It is an end-to-end voice conversion system which can change the speaker's emotion. For example, neutral to angry, sad to happy. The model aims at generating speech with desired emotions while keeping the original liguistic content and speaker identity. It first extracts acoustic features from raw audio, then learn the mapping from source emotion to target emotion in the feature space, and finally put those features together to rebuild the waveform. In our approach, three types of features are considered: 
 
 ### Features:
 1. Fundamental frequency (log F_0), converted by logarithm Gaussian normalized transformation
