@@ -11,7 +11,7 @@ This is a tensorflow implementation of my paper Nonparallel Emotional Speech Con
 
 CycleGAN is a generative model developed for unpaired image-to-image translation. It assumes the existence of a cycle-consistency mapping that an image in the source domain mapped to a target domain and mapped back will be exactly the same as the original image. 
 
-To fulfill the goal, we consider the following loss functions:
+To fulfill the goal (change emotion, keep linguistic content & speaker identity), we consider the following loss functions:
 
 ### Assumption and Loss
 1. Adversarial loss         (naturalness)
