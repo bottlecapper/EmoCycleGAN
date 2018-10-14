@@ -29,11 +29,11 @@ When applied for voice conversion, gated linear units (GLUs) are used as activat
 
 ### Dataset: 
 [IEMOCAP](https://sail.usc.edu/iemocap/) <br />
-Professional US English speakers, five sessions, each has a dialog between one male and one female actor. The entire dataset has 12 hours of audiovisual data with 9 emotions (neutral, anger, happiness, excitement, sadness, frustration, fear, surprise, other). Since the task is to change emotion but keep the speaker identity, we build the dataset as following: <br />
-Source emotional speach of actorX, ~100 sentences for training (A); ~30 sentences for evaluation (valA)  <br />
-Target emotional speach of actorX, ~100 sentences for training (B); ~30 sentences for evaluation (valB)
+It has 10 professional US English speakers, five sessions, each has a dialog between one male and one female actor. The entire dataset has 12 hours of audiovisual data with 9 emotions (neutral, anger, happiness, excitement, sadness, frustration, fear, surprise, other). Since the task is to change emotion but keep the speaker identity, we build a sub-dataset as follows: <br />
+Source emotional speech of actorX, ~100 sentences for training (A); ~32 sentences for evaluation (valA)  <br />
+Target emotional speech of actorX, ~128 sentences for training (B); ~43 sentences for evaluation (valB)
 
-The model is trained to learn two mappings: A2B and B2A, and evaluation is conducted on three matrices:
+The model learns two mappings: A2B (hap2neu) and B2A (neu2hap), and evaluation is conducted on three matrices:
 1. emotional correctness
 2. speech naturalness
 3. speaker identity
