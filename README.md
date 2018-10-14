@@ -1,4 +1,4 @@
-# Nonparallel Emotional Speech Conversion using CycleGAN
+# Emotional Speech Conversion using Nonparallel Data
 
 ## Introduction
 
@@ -119,7 +119,7 @@ optional arguments:
 For example, to train CycleGAN model for voice conversion between ``SF1`` and ``TM1``:
 
 ```bash
-$ python train.py --train_A_dir /media/jg/H/data/VCC2016/vcc2016_training/SF1 --train_B_dir /media/jg/H/data/VCC2016/vcc2016_training/TM1 --model_dir ./model/sf1_tm1 --model_name sf1_tm1.ckpt --random_seed 0 --validation_A_dir /media/jg/H/data/VCC2016/evaluation_all/SF1 --validation_B_dir /media/jg/H/data/VCC2016/evaluation_all/TM1 --output_dir ./validation_output --tensorboard_log_dir ./log
+$ python train.py --train_A_dir ./../../../Database/Emotion/hap_neu/hap --train_B_dir ./../../../Database/Emotion/hap_neu/neu --model_dir ./model/hap_neu --model_name hap_neu.ckpt --random_seed 0 --validation_A_dir ./../../../Database/Emotion/hap_neu/val_hap --validation_B_dir ./../../../Database/Emotion/hap_neu/val_neu --output_dir ./validation_output --tensorboard_log_dir ./log
 ```
 
 
