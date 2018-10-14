@@ -114,7 +114,7 @@ optional arguments:
                         TensorBoard log directory.
 ```
 
-For example, to train CycleGAN model for voice conversion between ``SF1`` and ``TM1``:
+For example, to train CycleGAN model for voice conversion between ``hap`` and ``neu``:
 
 ```bash
 $ python train.py --train_A_dir ./../../../Database/Emotion/hap_neu/hap --train_B_dir ./../../../Database/Emotion/hap_neu/neu --model_dir ./model/hap_neu --model_name hap_neu.ckpt --random_seed 0 --validation_A_dir ./../../../Database/Emotion/hap_neu/val_hap --validation_B_dir ./../../../Database/Emotion/hap_neu/val_neu --output_dir ./validation_output --tensorboard_log_dir ./log
@@ -138,7 +138,7 @@ usage: convert.py [-h] [--model_dir MODEL_DIR] [--model_name MODEL_NAME]
                   [--conversion_direction CONVERSION_DIRECTION]
                   [--output_dir OUTPUT_DIR]
 
-Convert voices using pre-trained CycleGAN model.
+Convert voices using pre-trained EmoCycleGAN model.
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -158,9 +158,9 @@ optional arguments:
 To convert voice, put wav-formed speeches into ``data_dir`` and run the following commands in the terminal, the converted speeches would be saved in the ``output_dir``:
 
 ```bash
-$ python convert.py --model_dir ./model/sf1_tm1 --model_name sf1_tm1.ckpt --data_dir ./data/evaluation_all/SF1 --conversion_direction A2B --output_dir ./converted_voices
+$ python convert.py --model_dir ./model/hap2neu --model_name hap2neu.ckpt --data_dir ./../../../Database/Emotion/hap_neu/val_hap --conversion_direction A2B --output_dir ./converted_voices
 ```
-The convention for ``conversion_direction`` is that the first object in the model filename is A, and the second object in the model filename is B. In this case, ``SF1 = A`` and ``TM1 = B``.
+The convention for ``conversion_direction`` is that the first object in the model filename is A, and the second object in the model filename is B. In this case, ``hap = A`` and ``neu = B``.
 
 ## Check Model
 In check_train.ipynb, ...
@@ -183,9 +183,9 @@ In check_train.ipynb, ...
 ## To-Do List
 
 - [x] Vocoder comparison
-- [ ] Learn mapping of F0
+- [ ] Learn the mapping between source and target F0
 - [ ] Different loss function
 - [ ] Hyper parameter tuning
 - [ ] Train on more emotion pairs
-- [ ] Ablation study
+- [ ] Ablation study of F0 and MCEP
 - [ ] Objective and subjective evaluation
