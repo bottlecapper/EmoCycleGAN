@@ -51,7 +51,6 @@ The model learns two mappings: A2B (hap2neu) and B2A (neu2hap), and evaluation i
 ├── convert.py
 ├── model.py
 ├── module.py
-├── preprocess.py
 ├── README.md
 ├── train.py
 ├── utils.py
@@ -63,9 +62,8 @@ The model learns two mappings: A2B (hap2neu) and B2A (neu2hap), and evaluation i
 ### Dependencies
 
 * Python 3.5
-* Numpy 1.14
+* Numpy 1.15
 * TensorFlow 1.8
-* ProgressBar2 3.37.1
 * LibROSA 0.6
 * FFmpeg 4.0
 * [PyWorld](https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder)
@@ -114,7 +112,7 @@ optional arguments:
                         TensorBoard log directory.
 ```
 
-For example, to train CycleGAN model for voice conversion between ``hap`` and ``neu``:
+For example, to train CycleGAN model for voice conversion between ``ang`` and ``neu``:
 
 ```bash
 $ python train.py --train_A_dir ./../../../Database/Emotion/ang_neu/ang --train_B_dir ./../../../Database/Emotion/ang_neu/neu --model_dir ./model/ang_neu --model_name ang_neu.ckpt --random_seed 0 --validation_A_dir ./../../../Database/Emotion/ang_neu/val_ang --validation_B_dir ./../../../Database/Emotion/ang_neu/val_neu --output_dir ./validation_output --tensorboard_log_dir ./log
