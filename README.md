@@ -158,9 +158,9 @@ optional arguments:
 To convert voice, put wav-formed speeches into ``data_dir`` and run the following commands in the terminal, the converted speeches would be saved in the ``output_dir``:
 
 ```bash
-$ python convert.py --model_dir ./model/hap2neu --model_name hap2neu.ckpt --data_dir ./../../../Database/Emotion/hap_neu/val_hap --conversion_direction A2B --output_dir ./converted_voices
+$ python convert.py --model_dir ./model/ang_neu --model_name ang_neu.ckpt --data_dir ./../../../Database/Emotion/ang_neu/val_ang --conversion_direction A2B --output_dir ./converted_voices
 ```
-The convention for ``conversion_direction`` is that the first object in the model filename is A, and the second object in the model filename is B. In this case, ``hap = A`` and ``neu = B``.
+The convention for ``conversion_direction`` is that the first object in the model filename is A, and the second object in the model filename is B. In this case, ``ang = A`` and ``neu = B``.
 
 ## Check Model
 In check_train.ipynb, ...
