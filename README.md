@@ -153,7 +153,7 @@ optional arguments:
                         Directory for the converted voices.
 ```
 
-To convert voice, put wav-formed speeches into ``data_dir`` and run the following commands in the terminal, the converted speeches would be saved in the ``output_dir``:
+For test, put wav file in ``data_dir`` and run the following commands in terminal, the converted audio is in ``output_dir``:
 
 ```bash
 $ python convert.py --model_dir ./model/ang_neu --model_name ang_neu.ckpt --data_dir ./../../../Database/Emotion/ang_neu/val_ang --conversion_direction A2B --output_dir ./converted_voices
