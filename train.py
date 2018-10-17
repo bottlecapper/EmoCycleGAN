@@ -4,7 +4,7 @@ import argparse
 import time
 import librosa
 
-from preprocess import *
+from utils import *
 from model import CycleGAN
 
 
@@ -86,9 +86,10 @@ def train(train_A_dir, train_B_dir, model_dir, model_name, random_seed, validati
         start_time_epoch = time.time()
 
         pool_A, pool_B = list(coded_sps_A_norm), list(coded_sps_B_norm)
-        dataset_A, dataset_B = sample_train_data(pool_A=pool_A, pool_B=pool_B, n_frames=n_frames, max_samples=max_samples)
+        f0sA, f0sB = list(f0s_A), list(f0s_B)
+        dataset_A, dataset_B = sample_train_data(pool_A=pool_A, pool_B=pool_B, f0s_A=f0sA, f0s_B=f0sB, n_frames=n_frames, max_samples=max_samples)
+        # dataset_A, dataset_B = sample_train_data(dataset_A = coded_sps_A_norm, dataset_B = coded_sps_B_norm, n_frames = n_frames)
         print('dataset_A', np.shape(dataset_A), 'dataset_B', np.shape(dataset_B))
-        # dataset_A, dataset_B = sample_train_data_old(dataset_A = coded_sps_A_norm, dataset_B = coded_sps_B_norm, n_frames = n_frames)
 
         n_samples = dataset_A.shape[0]
 
@@ -166,13 +167,13 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description = 'Train CycleGAN model for datasets.')
 
-    train_A_dir_default = './../../../Database/Emotion/hap_neu/hap'
-    train_B_dir_default = './../../../Database/Emotion/hap_neu/neu'
-    model_dir_default = './model/hap_neu'
-    model_name_default = 'hap_neu.ckpt'
+    train_A_dir_default = './../../../Database/Emotion/ang_neu/ang'
+    train_B_dir_default = './../../../Database/Emotion/ang_neu/neu'
+    model_dir_default = './model/ang_neu'
+    model_name_default = 'ang_neu.ckpt'
     random_seed_default = 0
-    validation_A_dir_default = './../../../Database/Emotion/hap_neu/val_hap'
-    validation_B_dir_default = './../../../Database/Emotion/hap_neu/val_neu'
+    validation_A_dir_default = './../../../Database/Emotion/ang_neu/val_ang'
+    validation_B_dir_default = './../../../Database/Emotion/ang_neu/val_neu'
     output_dir_default = './validation_output'
     tensorboard_log_dir_default = './log'
 

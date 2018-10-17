@@ -3,7 +3,7 @@ import os
 import numpy as np
 
 from model import CycleGAN
-from preprocess import *
+from utils import *
 
 def conversion(model_dir, model_name, data_dir, conversion_direction, output_dir):
 
@@ -55,17 +55,18 @@ def conversion(model_dir, model_name, data_dir, conversion_direction, output_dir
         coded_sp_converted = coded_sp_converted.T
         coded_sp_converted = np.ascontiguousarray(coded_sp_converted)
         decoded_sp_converted = world_decode_spectral_envelop(coded_sp = coded_sp_converted, fs = sampling_rate)
+        # decoded_sp_converted = sp
         wav_transformed = world_speech_synthesis(f0 = f0_converted, decoded_sp = decoded_sp_converted, ap = ap, fs = sampling_rate, frame_period = frame_period)
         librosa.output.write_wav(os.path.join(output_dir, os.path.basename(file)), wav_transformed, sampling_rate)
 
 
 if __name__ == '__main__':
 
-    parser = argparse.ArgumentParser(description = 'Convert voices using pre-trained CycleGAN model.')
+    parser = argparse.ArgumentParser(description = 'Convert voices using pre-trained EmoCycleGAN model.')
 
-    model_dir_default = './model/sf1_tm1'
-    model_name_default = 'sf1_tm1.ckpt'
-    data_dir_default = './data/evaluation_all/SF1'
+    model_dir_default = './model/ang_neu'
+    model_name_default = 'ang_neu.ckpt'
+    data_dir_default = './../../../Database/Emotion/ang_neu/val_ang'
     conversion_direction_default = 'A2B'
     output_dir_default = './converted_voices'
 
