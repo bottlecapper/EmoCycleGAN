@@ -51,7 +51,6 @@ The model learns two mappings: A2B (hap2neu) and B2A (neu2hap), and evaluation i
 ├── convert.py
 ├── model.py
 ├── module.py
-├── preprocess.py
 ├── README.md
 ├── train.py
 ├── utils.py
@@ -63,9 +62,8 @@ The model learns two mappings: A2B (hap2neu) and B2A (neu2hap), and evaluation i
 ### Dependencies
 
 * Python 3.5
-* Numpy 1.14
+* Numpy 1.15
 * TensorFlow 1.8
-* ProgressBar2 3.37.1
 * LibROSA 0.6
 * FFmpeg 4.0
 * [PyWorld](https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder)
@@ -114,7 +112,7 @@ optional arguments:
                         TensorBoard log directory.
 ```
 
-For example, to train CycleGAN model for voice conversion between ``hap`` and ``neu``:
+For example, to train CycleGAN model for voice conversion between ``ang`` and ``neu``:
 
 ```bash
 $ python train.py --train_A_dir ./../../../Database/Emotion/ang_neu/ang --train_B_dir ./../../../Database/Emotion/ang_neu/neu --model_dir ./model/ang_neu --model_name ang_neu.ckpt --random_seed 0 --validation_A_dir ./../../../Database/Emotion/ang_neu/val_ang --validation_B_dir ./../../../Database/Emotion/ang_neu/val_neu --output_dir ./validation_output --tensorboard_log_dir ./log
@@ -122,7 +120,7 @@ $ python train.py --train_A_dir ./../../../Database/Emotion/ang_neu/ang --train_
 ### Tensorboard
 
 <p align="center">
-    <img src = "./tensorboard/20181012.png" width="100%">
+    <img src = "./figures/20181012.png" width="100%">
 </p>
 
 We can listen to the converted audio in folder ``validation_output``, and compare with the original files in ``validation_A_dir`` and ``validation_B_dir``. 
@@ -155,12 +153,12 @@ optional arguments:
                         Directory for the converted voices.
 ```
 
-To convert voice, put wav-formed speeches into ``data_dir`` and run the following commands in the terminal, the converted speeches would be saved in the ``output_dir``:
+For test, put wav file in ``data_dir`` and run the following commands in terminal, the converted audio is in ``output_dir``:
 
 ```bash
-$ python convert.py --model_dir ./model/hap2neu --model_name hap2neu.ckpt --data_dir ./../../../Database/Emotion/hap_neu/val_hap --conversion_direction A2B --output_dir ./converted_voices
+$ python convert.py --model_dir ./model/ang_neu --model_name ang_neu.ckpt --data_dir ./../../../Database/Emotion/ang_neu/val_ang --conversion_direction A2B --output_dir ./converted_voices
 ```
-The convention for ``conversion_direction`` is that the first object in the model filename is A, and the second object in the model filename is B. In this case, ``hap = A`` and ``neu = B``.
+The convention for ``conversion_direction`` is that the first object in the model filename is A, and the second object in the model filename is B. In this case, ``ang = A`` and ``neu = B``.
 
 ## Check Model
 In check_train.ipynb, ...
