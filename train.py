@@ -73,6 +73,8 @@ def train(train_A_dir, train_B_dir, model_dir, model_name, random_seed, validati
 
     model = CycleGAN(num_features = num_mcep)
 
+    num_iterations = 0
+
     for epoch in range(num_epochs):
         print('Epoch: %d' % epoch)
         '''
@@ -95,7 +97,7 @@ def train(train_A_dir, train_B_dir, model_dir, model_name, random_seed, validati
 
         for i in range(n_samples // mini_batch_size):
 
-            num_iterations = n_samples // mini_batch_size * epoch + i
+            num_iterations += 1
 
             if num_iterations > 10000:
                 lambda_identity = 0
