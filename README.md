@@ -164,9 +164,9 @@ The convention for ``conversion_direction`` is that the first object in the mode
 In check_train.ipynb, ...
 
 ## Ablation Study
-1. Using only F0
-2. Using only MCEP
-
+1. Use F0
+2. Use MCEP
+3. Use power envelope
 
 ## Reference
 
