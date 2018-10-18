@@ -6,8 +6,9 @@ This is a tensorflow implementation of my paper Nonparallel Emotional Speech Con
 
 ### Features:
 1. Fundamental frequency (log F_0), converted by logarithm Gaussian normalized transformation
-2. Mel-cepstral coefficients (MCEPs), a representation of spectral envelope, trained by CycleGAN
-3. Aperiodicities (APs), directly used without modification
+2. Power envelope, converted by logarithm Gaussian normalized transformation
+3. Mel-cepstral coefficients (MCEPs), a representation of spectral envelope, trained by CycleGAN
+4. Aperiodicities (APs), directly used without modification
 
 ### Assumption and Loss
 To fulfill the goal (change emotion, keep linguistic content & speaker identity), we consider the following loss functions:
