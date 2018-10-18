@@ -180,11 +180,11 @@ In check_train.ipynb, ...
 
 ## To-Do List
 
+- [ ] Denoising and Source Separation
 - [x] Vocoder comparison
-- [ ] Denoising (decompose speaker1 and speaker2)
-- [ ] Learn the mapping between source and target F0
-- [ ] Different loss function
+- [ ] Learn the mapping of F0 and power envelope
+- [ ] Different NN architecture and loss
 - [ ] Hyper parameter tuning
+- [ ] Ablation study of F0, MCEP and power envelope
 - [ ] Train on more emotion pairs
-- [ ] Ablation study of F0 and MCEP
 - [ ] Objective and subjective evaluation
