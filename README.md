@@ -181,7 +181,7 @@ In check_train.ipynb, ...
 
 ## To-Do List
 
-- [ ] Denoising and Source Separation
+- [ ] Denoising and Sound Source Separation
 - [x] Vocoder comparison
 - [ ] Learn the mapping of F0 and power envelope
 - [ ] Different NN architecture and loss
