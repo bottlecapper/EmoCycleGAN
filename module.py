@@ -184,7 +184,6 @@ def generator_gatedcnn(inputs, reuse = False, scope_name = 'generator_gatedcnn')
 
     return o2
     
-
 def discriminator(inputs, reuse = False, scope_name = 'discriminator'):
 
     # inputs has shape [batch_size, num_features, time]
@@ -211,4 +210,14 @@ def discriminator(inputs, reuse = False, scope_name = 'discriminator'):
         o1 = tf.layers.dense(inputs = d3, units = 1, activation = tf.nn.sigmoid)
 
         return o1
+
+
+
+
+
+
+
+
+
+
 
