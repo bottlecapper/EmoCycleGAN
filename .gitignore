@@ -1,3 +1,22 @@
 
 *.npz
 *.wav
+log/20190131-172248/events.out.tfevents.1548940971.JG
+20181027/model/ang_hap/checkpoint
+20181015/log/20181015-110450/events.out.tfevents.1539587093.JG
+20181015/model/ang_neu/ang_neu.ckpt.meta
+20181015/model/ang_neu/checkpoint
+20181015/model/ang_neu/ang_neu.ckpt.index
+20181015/model/ang_neu/ang_neu.ckpt.data-00000-of-00001
+20181025/log/20181024-110656/events.out.tfevents.1540364818.JG
+*.meta
+*.index
+*.data-00000-of-00001
+*.JG
+20181026/model/hap_sad/checkpoint
+*.JG3
+20181025/model/ang_sad/checkpoint
+20181014/model/hap_neu/checkpoint
+20181013/model/hap2neu/checkpoint
+20181013/model/ang2neu/checkpoint
+20181012/model/ang2neu/checkpoint
